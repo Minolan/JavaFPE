@@ -69,7 +69,7 @@ public class FF3 {
 	 *             If the radix is not in the range
 	 *             [{@value org.fpe4j.Constants#MINRADIX}..{@value org.fpe4j.Constants#MAXRADIX}].
 	 */
-	FF3(int radix) {
+	public FF3(int radix) {
 		if (radix < Constants.MINRADIX || radix > Constants.MAXRADIX)
 			throw new IllegalArgumentException("Radix must be in the range 2..65536: " + radix);
 		this.radix = radix;
