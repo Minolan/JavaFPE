@@ -156,7 +156,7 @@ public class FF1 {
 		int n = X.length;
 		int t = T.length;
 
-		// 1. Let u = floor(n/2); v = n – u.
+		// 1. Let u = floor(n/2); v = n ï¿½ u.
 		int u = floor(n / 2.0);
 		int v = n - u;
 		if (Constants.CONFORMANCE_OUTPUT)
@@ -221,7 +221,7 @@ public class FF1 {
 
 			// iii. Let S be the first d bytes of the following string of
 			// ceiling(d/16) blocks: R || CIPH K (R xor [1]^16 ) || CIPH K (R
-			// xor [2]^16 ) … CIPH K (R xor [ceiling(d/16)–1]^16 ).
+			// xor [2]^16 ) ï¿½ CIPH K (R xor [ceiling(d/16)ï¿½1]^16 ).
 			byte[] S = R;
 			for (int j = 1; j <= ceiling(d / 16.0) - 1; j++) {
 				S = concatenate(S, mCiphers.ciph(K, xor(R, bytestring(j, 16))));
@@ -341,7 +341,7 @@ public class FF1 {
 		int n = X.length;
 		int t = T.length;
 
-		// 1. Let u = floor(n/2); v = n – u.
+		// 1. Let u = floor(n/2); v = n ï¿½ u.
 		int u = floor(n / 2.0);
 		int v = n - u;
 		if (Constants.CONFORMANCE_OUTPUT)
@@ -407,7 +407,7 @@ public class FF1 {
 
 			// iii. Let S be the string of the first d bytes of the following
 			// string of ceiling (d/16) blocks: R || CIPH K (R xor [1] 16 ) ||
-			// CIPH K (R xor [2] 16 ) … CIPH K (R xor [ceiling(d/16) – 1] 16 ).
+			// CIPH K (R xor [2] 16 ) ï¿½ CIPH K (R xor [ceiling(d/16) ï¿½ 1] 16 ).
 			byte[] S = R;
 			for (int j = 1; j <= ceiling(d / 16.0) - 1; j++) {
 				S = concatenate(S, mCiphers.ciph(K, xor(R, bytestring(j, 16))));
@@ -426,7 +426,7 @@ public class FF1 {
 			if (Constants.CONFORMANCE_OUTPUT)
 				System.out.println("\tStep 6.v.\n\t\tm is " + m);
 
-			// vi. Let c = (NUMradix (B)–y) mod radix m .
+			// vi. Let c = (NUMradix (B)ï¿½y) mod radix m .
 			BigInteger c = mod(num(B, radix).subtract(y), BigInteger.valueOf(radix).pow(m));
 			if (Constants.CONFORMANCE_OUTPUT)
 				System.out.println("\tStep 6.vi.\n\t\tc is " + c);
